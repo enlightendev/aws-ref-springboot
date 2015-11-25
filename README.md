@@ -1,6 +1,8 @@
 ## About
 
-Reference application using spring and aws 
+Reference application using spring boot and aws java api
+
+[Java Developer Guide](http://aws.amazon.com/sdk-for-java/)
 
 ## Dev Process
 initial project setup created at https://start.spring.io/
@@ -65,6 +67,8 @@ ops: remote shell
 - create a watch list
 - add tickers to watchlist
 - add price levels to tickers
+- store images related to 
+- generate alerts: email, sns, etc
 
 
 ## Properties Configuration
@@ -76,6 +80,11 @@ reference
 - http://docs.spring.io/spring-boot/docs/current/reference/html/howto-properties-and-configuration.html
 
 
+## Caching
 
+Basic caching can be applied at the service layer to reduce calls to "expensive" services. Care must be taken to evict 
+caches when data is created/updated.
+
+see docs: http://docs.spring.io/spring/docs/current/spring-framework-reference/html/cache.html
 
 

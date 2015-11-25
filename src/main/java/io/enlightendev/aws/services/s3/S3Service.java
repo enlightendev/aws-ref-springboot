@@ -8,6 +8,9 @@ import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.Bucket;
 import io.enlightendev.aws.services.AWSServiceBase;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -27,6 +30,7 @@ public class S3Service extends AWSServiceBase {
 
     }
 
+    @Cacheable("buckets")
     public String[] listBuckets(){
 
         List<String> buckets = new ArrayList<>();
@@ -55,6 +59,7 @@ public class S3Service extends AWSServiceBase {
         return buckets.toArray(new String[buckets.size()]);
     }
 
+    @CacheEvict(cacheNames="buckets", allEntries=true)
     public String createBucket(String bucketName){
         Bucket bucket = s3.createBucket(bucketName);
         return bucket.getName();
