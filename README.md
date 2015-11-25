@@ -67,3 +67,15 @@ ops: remote shell
 - add price levels to tickers
 
 
+## Properties Configuration
+
+application.yml contains runtime static propeties
+
+reference
+- http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#boot-features-external-config-yaml
+- http://docs.spring.io/spring-boot/docs/current/reference/html/howto-properties-and-configuration.html
+
+
+
+
+

@@ -1,0 +1,34 @@
+# http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#boot-features-external-config-yaml
+# http://docs.spring.io/spring-boot/docs/current/reference/html/howto-properties-and-configuration.html
+
+server.port: 8181
+management.port: 9191
+
+spring:
+#    datasource:
+#        dataSourceClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+#        url: jdbc:sqlserver://pf-dv-tst-sql01.philafin.local:1433;databaseName=E2DW_MAIN
+#        username: jlamadrid
+#        password: Liberty123
+#        max-active: 15
+#    jpa:
+#        show-sql: true
+
+  data:
+    rest:
+      base-path: '/api'
+
+logging:
+    file: /data/aws-springboot/logs/aws-springboot.log
+
+logging.level:
+    org.springframework.context: INFO
+    org.springframework.boot: INFO
+    org.springframework.data: INFO
+    org.springframework.web: INFO
+    org.springframework.jdbc: INFO
+    org.springframework.batch: INFO
+    org.hibernate: INFO
+
+awsservice:
+  profile: enlightendev
