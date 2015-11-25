@@ -18,12 +18,11 @@ public class S3Controller {
 
     @RequestMapping("/api/s3/list")
     public String[] ping(){
-        String[] buckets = s3Service.listBuckets();
-        return buckets;
+        return s3Service.listBuckets();
     }
 
     @RequestMapping(value = "/api/s3/create/{bucketName}", method = RequestMethod.POST)
-    public String createQueue(@PathVariable String bucketName){
+    public String createBucket(@PathVariable String bucketName){
 
         return s3Service.createBucket(bucketName);
     }
