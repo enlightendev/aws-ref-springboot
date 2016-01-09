@@ -17,7 +17,7 @@ public class S3Controller {
     S3Service s3Service;
 
     @RequestMapping("/api/s3/list")
-    public String[] ping(){
+    public String[] listBuckets(){
         return s3Service.listBuckets();
     }
 
